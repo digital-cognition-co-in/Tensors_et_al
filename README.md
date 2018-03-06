@@ -7,3 +7,8 @@ Wiki - In mathematics, tensors are geometric objects that describe linear relati
 
 https://en.wikipedia.org/wiki/Tensor
 
+#
+
+### Main Source ==
+https://github.com/chiphuyen/stanford-tensorflow-tutorials
+
