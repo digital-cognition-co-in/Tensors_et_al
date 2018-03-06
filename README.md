@@ -2,8 +2,8 @@
 Geomatics_n_ComputerVision_with_Tensorflow
 
 
-SCREEN_SHOT_1: 
-![alt text](../master/tensor_pic.png "SCREEN_SHOT_1")
+
+![alt text](../master/tensor_pic.png "Tensor")
 #
 
 
