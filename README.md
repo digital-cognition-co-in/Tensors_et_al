@@ -19,10 +19,11 @@ https://en.wikipedia.org/wiki/Tensor
 https://github.com/chiphuyen/stanford-tensorflow-tutorials
 
 #
-### TIME STAMP -7th-MAR-18 --- 1100h 
+#### TIME STAMP -7th-MAR-18 --- 1100h 
 ### Installation Errors == 
 Initial hiccups ...
 #
+```python
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
 Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
@@ -31,33 +32,34 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 >>> import tensorflow as tf
 Illegal instruction (core dumped)
-
+```
 #
 https://www.tensorflow.org/install/install_linux#installing_with_native_pip
-### pip install tensorflow
+#### pip install tensorflow
 #
-###PIP and PIP3 are SAME within a Conda VENV - 
+####PIP and PIP3 are SAME within a Conda VENV - 
 - GIT Source === https://github.com/ContinuumIO/anaconda-issues/issues/1429
 - SO Source === https://stackoverflow.com/questions/44362214/install-pip3-for-conda
 
 #
-### TIME STAMP -7th-MAR-18 --- 1100h 
-### Probable solutions ...
-https://github.com/tensorflow/tensorflow/issues/8976
-https://github.com/tensorflow/tensorflow/issues/17441
-https://stackoverflow.com/questions/49081353/python-giving-illegal-instructioncore-dumped-error-when-importing-tensorflow
+#### TIME STAMP -7th-MAR-18 --- 1100h 
+#### Probable solutions ...
+
+- https://github.com/tensorflow/tensorflow/issues/8976
+- https://github.com/tensorflow/tensorflow/issues/17441
+- https://stackoverflow.com/questions/49081353/python-giving-illegal-instructioncore-dumped-error-when-importing-tensorflow
 
 
 #
-### TIME STAMP -7th-MAR-18 --- 1100h 
-### from URL --- 
+#### TIME STAMP -7th-MAR-18 --- 1100h 
+#### from URL --- 
 CPU only:
 sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.6.0-cp36-cp36m-linux_x86_64.whl
-# Error 
+#### Error -- "not a supported wheel on this platform."
 tensorflow-1.6.0-cp36-cp36m-linux_x86_64.whl is not a supported wheel on this platform.
 #
 
-# To see which Platform is PYTHON -- 64 BIT 0r 32 BIT
+#### Check Pythoon installed -- 64 BIT 0r 32 BIT
 
 ```python
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
@@ -65,22 +67,16 @@ Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32)
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> 
->>> import struct;print struct.calcsize("P") * 8
-  File "<stdin>", line 1
-    import struct;print struct.calcsize("P") * 8
-                             ^
-SyntaxError: invalid syntax
->>> 
 >>> import struct;print(struct.calcsize("P") * 8)
 64
 >>> 
 ``` 
 #
-### Gyan on using the GREP Command --- 
+####  GREP Usage :- 
 https://askubuntu.com/questions/55325/how-to-use-grep-command-to-find-text-including-subdirectories
 #
+
 ```python
->>> 
 >>> 
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ gcc -march=native -Q --help=target | grep enabled
   -m64                        		[enabled]
