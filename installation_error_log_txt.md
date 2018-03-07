@@ -1,7 +1,8 @@
 #
 #### TIME STAMP -7th-MAR-18 --- 1100h 
 ### Installation Errors == 
-Initial hiccups ...
+Initial hiccups ...finally resolved basis this issue == https://github.com/tensorflow/tensorflow/issues/17411
+
 #
 ```python
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
@@ -6799,4 +6800,159 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 #
 
+## iPyKernel Installation Dump --- 
 
+```python
+
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ pip install tensorflow==1.5
+Collecting tensorflow==1.5
+  Downloading tensorflow-1.5.0-cp36-cp36m-manylinux1_x86_64.whl (44.4MB)
+    100% |████████████████████████████████| 44.4MB 21kB/s 
+Requirement already satisfied: protobuf>=3.4.0 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow==1.5)
+Collecting tensorflow-tensorboard<1.6.0,>=1.5.0 (from tensorflow==1.5)
+  Downloading tensorflow_tensorboard-1.5.1-py3-none-any.whl (3.0MB)
+    100% |████████████████████████████████| 3.0MB 282kB/s 
+Requirement already satisfied: six>=1.10.0 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow==1.5)
+Requirement already satisfied: absl-py>=0.1.6 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow==1.5)
+Requirement already satisfied: wheel>=0.26 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow==1.5)
+Requirement already satisfied: numpy>=1.12.1 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow==1.5)
+Requirement already satisfied: setuptools in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from protobuf>=3.4.0->tensorflow==1.5)
+Requirement already satisfied: html5lib==0.9999999 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow-tensorboard<1.6.0,>=1.5.0->tensorflow==1.5)
+Requirement already satisfied: werkzeug>=0.11.10 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow-tensorboard<1.6.0,>=1.5.0->tensorflow==1.5)
+Requirement already satisfied: bleach==1.5.0 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow-tensorboard<1.6.0,>=1.5.0->tensorflow==1.5)
+Requirement already satisfied: markdown>=2.6.8 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow-tensorboard<1.6.0,>=1.5.0->tensorflow==1.5)
+Installing collected packages: tensorflow-tensorboard, tensorflow
+Successfully installed tensorflow-1.5.0 tensorflow-tensorboard-1.5.1
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
+Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import tensorflow
+>>> 
+>>> # Finally LEGAL :) 
+... 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git add .
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git commit -m"4"
+[master 7ba9e62] 4
+ 2 files changed, 6814 insertions(+), 200 deletions(-)
+ rewrite README.md (92%)
+ create mode 100644 installation_error_log_txt.md
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git push origin master
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 45.35 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/digital-cognition-co-in/Tensors_et_al.
+   cb5d28a..7ba9e62  master -> master
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git add .
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git commit -m"4"
+[master 8b7baca] 4
+ 1 file changed, 14 insertions(+), 3 deletions(-)
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 382 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/digital-cognition-co-in/Tensors_et_al.git
+To https://github.com/digital-cognition-co-in/Tensors_et_al.
+   7ba9e62..8b7baca  master -> master
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ pip freeze requirements.txt
+absl-py==0.1.10
+astor==0.6.2
+bleach==1.5.0
+certifi==2016.2.28
+gast==0.2.0
+grpcio==1.10.0
+html5lib==0.9999999
+Markdown==2.6.11
+numpy==1.14.1
+protobuf==3.5.1
+six==1.11.0
+tensorboard==1.6.0
+tensorflow==1.5.0
+tensorflow-tensorboard==1.5.1
+termcolor==1.1.0
+Werkzeug==0.14.1
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ pip install ipykernel
+Collecting ipykernel
+  Using cached ipykernel-4.8.2-py3-none-any.whl
+Collecting jupyter-client (from ipykernel)
+  Using cached jupyter_client-5.2.2-py2.py3-none-any.whl
+Collecting ipython>=4.0.0 (from ipykernel)
+  Using cached ipython-6.2.1-py3-none-any.whl
+Collecting tornado>=4.0 (from ipykernel)
+  Downloading tornado-5.0.tar.gz (504kB)
+    100% |████████████████████████████████| 512kB 1.1MB/s 
+Collecting traitlets>=4.1.0 (from ipykernel)
+  Using cached traitlets-4.3.2-py2.py3-none-any.whl
+Collecting python-dateutil>=2.1 (from jupyter-client->ipykernel)
+  Using cached python_dateutil-2.6.1-py2.py3-none-any.whl
+Collecting jupyter-core (from jupyter-client->ipykernel)
+  Using cached jupyter_core-4.4.0-py2.py3-none-any.whl
+Collecting pyzmq>=13 (from jupyter-client->ipykernel)
+  Downloading pyzmq-17.0.0-cp36-cp36m-manylinux1_x86_64.whl (3.1MB)
+    100% |████████████████████████████████| 3.1MB 295kB/s 
+Collecting pygments (from ipython>=4.0.0->ipykernel)
+  Using cached Pygments-2.2.0-py2.py3-none-any.whl
+Collecting pexpect; sys_platform != "win32" (from ipython>=4.0.0->ipykernel)
+  Using cached pexpect-4.4.0-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from ipython>=4.0.0->ipykernel)
+  Using cached simplegeneric-0.8.1.zip
+Requirement already satisfied: setuptools>=18.5 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from ipython>=4.0.0->ipykernel)
+Collecting decorator (from ipython>=4.0.0->ipykernel)
+  Using cached decorator-4.2.1-py2.py3-none-any.whl
+Collecting prompt-toolkit<2.0.0,>=1.0.4 (from ipython>=4.0.0->ipykernel)
+  Using cached prompt_toolkit-1.0.15-py3-none-any.whl
+Collecting pickleshare (from ipython>=4.0.0->ipykernel)
+  Using cached pickleshare-0.7.4-py2.py3-none-any.whl
+Collecting jedi>=0.10 (from ipython>=4.0.0->ipykernel)
+  Using cached jedi-0.11.1-py2.py3-none-any.whl
+Collecting ipython-genutils (from traitlets>=4.1.0->ipykernel)
+  Using cached ipython_genutils-0.2.0-py2.py3-none-any.whl
+Requirement already satisfied: six in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from traitlets>=4.1.0->ipykernel)
+Collecting ptyprocess>=0.5 (from pexpect; sys_platform != "win32"->ipython>=4.0.0->ipykernel)
+  Using cached ptyprocess-0.5.2-py2.py3-none-any.whl
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.4->ipython>=4.0.0->ipykernel)
+  Using cached wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting parso==0.1.1 (from jedi>=0.10->ipython>=4.0.0->ipykernel)
+  Using cached parso-0.1.1-py2.py3-none-any.whl
+Building wheels for collected packages: tornado, simplegeneric
+  Running setup.py bdist_wheel for tornado ... done
+  Stored in directory: /home/dhankar/.cache/pip/wheels/ec/da/45/505e8bf2dc544b21aeeee8705da32a2b27600f541dca4a3c8f
+  Running setup.py bdist_wheel for simplegeneric ... done
+  Stored in directory: /home/dhankar/.cache/pip/wheels/7b/31/08/c85e74c84188cbec6a6827beec4d640f2bd78ae003dc1ec09d
+Successfully built tornado simplegeneric
+Installing collected packages: python-dateutil, tornado, ipython-genutils, decorator, traitlets, jupyter-core, pyzmq, jupyter-client, pygments, ptyprocess, pexpect, simplegeneric, wcwidth, prompt-toolkit, pickleshare, parso, jedi, ipython, ipykernel
+Successfully installed decorator-4.2.1 ipykernel-4.8.2 ipython-6.2.1 ipython-genutils-0.2.0 jedi-0.11.1 jupyter-client-5.2.2 jupyter-core-4.4.0 parso-0.1.1 pexpect-4.4.0 pickleshare-0.7.4 prompt-toolkit-1.0.15 ptyprocess-0.5.2 pygments-2.2.0 python-dateutil-2.6.1 pyzmq-17.0.0 simplegeneric-0.8.1 tornado-5.0 traitlets-4.3.2 wcwidth-0.1.7
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python -m ipykernel install --prefix /home/dhankar/anaconda2/envs/tensor/lib/python3.4/site-packages
+[InstallIPythonKernelSpecApp] WARNING | Installing to /home/dhankar/anaconda2/envs/tensor/lib/python3.4/site-packages/share/jupyter/kernels, which is not in ['/home/dhankar/.local/share/jupyter/kernels', '/home/dhankar/anaconda2/envs/tensor/share/jupyter/kernels', '/usr/local/share/jupyter/kernels', '/usr/share/jupyter/kernels', '/home/dhankar/.ipython/kernels']. The kernelspec may not be found.
+Installed kernelspec python3 in /home/dhankar/anaconda2/envs/tensor/lib/python3.4/site-packages/share/jupyter/kernels/python3
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+
+
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python -m ipykernel install -- user --name tensor --display-name "TENSOR- Py3"
+usage: ipython-kernel-install [-h] [--user] [--name NAME]
+                              [--display-name DISPLAY_NAME]
+                              [--profile PROFILE] [--prefix PREFIX]
+                              [--sys-prefix]
+ipython-kernel-install: error: unrecognized arguments: -- user --name tensor --display-name TENSOR- Py3
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ # this above line is Not required - iPykernel TENSOR installed OK 
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ # new note books are now able to access the - iPyKernel TENSOR
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+
+
+
+```
