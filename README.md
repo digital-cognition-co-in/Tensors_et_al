@@ -37,9 +37,9 @@ Illegal instruction (core dumped)
 https://www.tensorflow.org/install/install_linux#installing_with_native_pip
 #### pip install tensorflow
 #
-####PIP and PIP3 are SAME within a Conda VENV - 
-- GIT Source === https://github.com/ContinuumIO/anaconda-issues/issues/1429
-- SO Source === https://stackoverflow.com/questions/44362214/install-pip3-for-conda
+#### PIP and PIP3 are SAME within a Conda VENV - 
+- GIT Source = https://github.com/ContinuumIO/anaconda-issues/issues/1429
+- SO  Source = https://stackoverflow.com/questions/44362214/install-pip3-for-conda
 
 #
 #### TIME STAMP -7th-MAR-18 --- 1100h 
@@ -59,7 +59,7 @@ sudo pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/
 tensorflow-1.6.0-cp36-cp36m-linux_x86_64.whl is not a supported wheel on this platform.
 #
 
-#### Check Pythoon installed -- 64 BIT 0r 32 BIT
+#### Check Python instalation , is it - 64 BIT or 32 BIT
 
 ```python
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
@@ -111,5 +111,8 @@ https://askubuntu.com/questions/55325/how-to-use-grep-command-to-find-text-inclu
 ```
 #
 
+
+#
+#### TIME STAMP -7th-MAR-18 --- 1130h 
 
 
