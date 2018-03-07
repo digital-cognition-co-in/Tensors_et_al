@@ -1,5 +1,3 @@
-
-
 #
 #### TIME STAMP -7th-MAR-18 --- 1100h 
 ### Installation Errors == 
@@ -184,6 +182,9 @@ https://github.com/tensorflow/tensorflow/issues/2034
 
 
 #### Uninstall Dump down here for pedagogy laters ....
+
+
+```python
 
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ pip uninstall tensorflow
@@ -6777,6 +6778,11 @@ Requirement already satisfied: bleach==1.5.0 in /home/dhankar/anaconda2/envs/ten
 Requirement already satisfied: markdown>=2.6.8 in /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages (from tensorflow-tensorboard<1.6.0,>=1.5.0->tensorflow==1.5)
 Installing collected packages: tensorflow-tensorboard, tensorflow
 Successfully installed tensorflow-1.5.0 tensorflow-tensorboard-1.5.1
+```
+#
+
+
+```python
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
 Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
 [GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
@@ -6787,5 +6793,10 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> # Finally LEGAL :) 
 ... 
 (tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
-(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+```
+
+# 
+
+#
+
 
