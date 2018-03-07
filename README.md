@@ -113,6 +113,86 @@ https://askubuntu.com/questions/55325/how-to-use-grep-command-to-find-text-inclu
 
 
 #
-#### TIME STAMP -7th-MAR-18 --- 1130h 
+#### TIME STAMP -7th-MAR-18 --- 1145h 
+Probable solutions - 
+
+illegal instruction error when building Tensorflow from source
+- https://stackoverflow.com/questions/45877158/illegal-instruction-error-when-building-tensorflow-from-source
+
+- 
+
+# 
+If it were a "SEGMENTATION FAULT"  
+- As suggested above - imported numpy before importing TF - same error == Illegal instruction (core dumped)
+- But in my case its a - "Illegal instruction (core dumped)"
+
+
+```python
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ python
+Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import numpy
+>>> 
+>>> import tensorflow
+Illegal instruction (core dumped)
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ 
+
+
+```
+
+#
+http://sourceware.org/gdb/current/onlinedocs/gdb/
+#
+
+```python 
+#
+(tensor) dhankar@dhankar-VPCEB44EN:/media/dhankar/Dhankar_1/a1_18/a1____Tensor_Mar18/Tensor$ gdb python
+GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+Copyright (C) 2016 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from python...done.
+(gdb) 
+(gdb) r
+Starting program: /home/dhankar/anaconda2/envs/tensor/bin/python 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+Python 3.6.2 |Continuum Analytics, Inc.| (default, Jul 20 2017, 13:51:32) 
+[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> import tensorflow
+[New Thread 0x7ffff2736700 (LWP 2962)]
+[New Thread 0x7ffff1f35700 (LWP 2963)]
+[New Thread 0x7fffed734700 (LWP 2964)]
+
+Thread 1 "python" received signal SIGILL, Illegal instruction.
+0x00007fffe29ef880 in std::pair<std::__detail::_Node_iterator<std::pair<tensorflow::StringPiece const, std::function<bool (tensorflow::Variant*)> >, false, true>, bool> std::_Hashtable<tensorflow::StringPiece, std::pair<tensorflow::StringPiece const, std::function<bool (tensorflow::Variant*)> >, std::allocator<std::pair<tensorflow::StringPiece const, std::function<bool (tensorflow::Variant*)> > >, std::__detail::_Select1st, std::equal_to<tensorflow::StringPiece>, tensorflow::StringPieceHasher, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_emplace<std::pair<tensorflow::StringPiece, std::function<bool (tensorflow::Variant*)> > >(std::integral_constant<bool, true>, std::pair<tensorflow::StringPiece, std::function<bool (tensorflow::Variant*)> >&&) ()
+   from /home/dhankar/anaconda2/envs/tensor/lib/python3.6/site-packages/tensorflow/python/../libtensorflow_framework.so
+(gdb) 
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 2951] will be killed.
+
+Quit anyway? (y or n) y
+
+
+```
+
+#
+
 
 
