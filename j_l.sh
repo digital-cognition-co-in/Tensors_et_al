@@ -1,6 +1,6 @@
 #!/bin/bash
 
-printf "\n** WELCOME to JUPYTER Notebooks - serving Python + Tensorlow \n"
+printf "\n** Hey DHANKAR - Jupyter Notebooks - serving Python + TensorFlow \n"
 
 jupyter notebook
 
