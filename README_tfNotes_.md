@@ -33,7 +33,16 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 #
 - We train the NEURAL NET to deduce the WEIGHTS and BIASES on its own. 
 - When we TRAIN the - nn - initialize WEIGHTS and BIASES to soem RANDOM Values ?? [ WHAT RANDOM - within what RANGE etc ??]
-- One HOT ENCODING - Values - 0 -9 . The 
+- One HOT ENCODING Values - 0-9 . The VECTOR of ACTUAL PROBABILITIES. This is ONE HOT ENCODED with the 1 at the INDEX of the DESIRED CATEGORY or NUMBER. 
+- The Other VECTOR is the VECTOR of PREDICTED / COMPUTED-  PROBABILITIES . 
+- Now we need to CALCULATE the DISTANCE between these two VECTORS. 
+- Euclidian distance would also do but the best for a CLASSIFICATION problem is the -- CROSS ENTROPY . 
+- CROSS ENTROPY is SUM across the VECTORS of Values on top NUMBERS Above - 0-9. Multiplied (Dot product) of the LOG of the VALUES Below. 
+- As all the VALUES on the BOTTOM are less than 1 . All the LOG VALUES  shall be negative , thus the returned value has been given a NEGATIVE sign. 
+- We need the SYSTEM to PREDICT Values as close as possible to the ACTUAL PROBABILITIES. Thus we will guide the system through thwe TRAINING phase to MINIMIZE this Distance and this is thus called the ERROR Function. 
+
+
+
 
 
 
