@@ -41,6 +41,28 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 - As all the VALUES on the BOTTOM are less than 1 . All the LOG VALUES  shall be negative , thus the returned value has been given a NEGATIVE sign. 
 - We need the SYSTEM to PREDICT Values as close as possible to the ACTUAL PROBABILITIES. Thus we will guide the system through thwe TRAINING phase to MINIMIZE this Distance and this is thus called the ERROR Function. 
 
+### Matplotlib Graphs 
+#
+- Accuracy - % of correctly classifed images
+- Weights - Minus 1 to Plus 1 
+- Biases - Minus 2 to Plus 2
+
+#
+
+tf.Variable --- variables of TF are values we are wanting TF to compute for us. 
+tf.placeholder --- a placeholder for the images
+
+```
+X = tf.placeholder(tf.float32,[None,28,28,1]
+# 1 for the GRAY CHANNEL 
+# 3 for the RGB
+# None for Image Batch Size 
+# 28 , 28 - Shape of Image Pixels
+```
+
+
+
+
 
 
 
