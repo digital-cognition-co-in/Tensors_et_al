@@ -47,10 +47,12 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 - Weights - Minus 1 to Plus 1 
 - Biases - Minus 2 to Plus 2
 
-#
+### Tensorflow Code
 
 tf.Variable --- variables of TF are values we are wanting TF to compute for us. 
+#
 tf.placeholder --- a placeholder for the images
+#
 
 ```
 X = tf.placeholder(tf.float32,[None,28,28,1]
@@ -59,6 +61,8 @@ X = tf.placeholder(tf.float32,[None,28,28,1]
 # None for Image Batch Size 
 # 28 , 28 - Shape of Image Pixels
 ```
+#
+
 
 
 
