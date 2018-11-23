@@ -55,13 +55,18 @@ tf.placeholder --- a placeholder for the images
 #
 
 ```
+import tensorflow as tf 
 X = tf.placeholder(tf.float32,[None,28,28,1]
 # 1 for the GRAY CHANNEL 
 # 3 for the RGB
 # None for Image Batch Size 
 # 28 , 28 - Shape of Image Pixels
+
+W = tf.variable(tf.zeros([784,10]))
+b = tf.Variable(tf.zeros([10]))
+
+init = tf.initialize_all_variables()
 ```
-#
 
 
 
