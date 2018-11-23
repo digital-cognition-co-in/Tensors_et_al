@@ -111,7 +111,15 @@ is_correct = tf.equal(tf.argmax(Y,1)tf.argmax(Y_,1)) ## One Hot Decoding == tf.a
 accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 
 ```
+#### Its called - Gradient descent , as we Follow in the Direction pointed by the Gradient and Descent . 
+- Gradient descent - we are in the space of weights and biases...
+- The Gradient points us downwards as its got a Negative Sign ...
+- We take a little step - downwards into the direction pointed by the Gradient...
+- Step means we MODIFY the Weights and Biases by a DELTA - so that we achieve a smaller LOSS or ERROR Function...
+- This is the basic TRAINING - whenever we pass in a New Batch of Training Images - we repeat this process and everytime reduce the ERROR or LOSS Function.
+ 
 #
+
 
 
 
