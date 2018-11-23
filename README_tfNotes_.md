@@ -130,7 +130,23 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 - Define a Session with - ```tf.session()```. Then call this session at one EDGE of the GRAPH  
 - Feed the Placeholders , created earlier with actual data - training Images and training Labels.  Using the Dictionary - ```train_data{X:batch_X,Y_:batch_Y}```
 
+#### Five Fully Connected Layers
 #
+- First layer will compute Weighted Sums of the Pixels.
+- Next layer will compute Weighted Sums of the Inputs from First Layer.
+- We keep SOFTMAX as the OutPut layer - for other layers use SIGMOID , the most basic classical continous function that goes from - 0 to 1.
+- With Five Layers - we have a set of weights and biases for each layer.
+#### RELU better than SIGMOID
+#
+- We use RELU as its better than SIGMOID - why ? 
+- ``` Y = tf.nn.relu(tf.matmul(X,W)+b)``` - RELU returns - Zero for all negative values and One (Identity) for all positive values.
+- Start Fast and then Slow Down - Learning rate decay on an exponential curve.
+- Overfitting 
+- DropOut - basis probability remove a certain % of Neurons during training - and again get them back in the network to run on TEST data. 
+- TF dropout function , ``` Y = tf.nn.dropout(Yf,pkeep) ```.
+#
+
+- 
 
 
 #
