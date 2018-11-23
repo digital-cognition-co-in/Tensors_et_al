@@ -36,10 +36,10 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 - One HOT ENCODING Values - 0-9 . The VECTOR of ACTUAL PROBABILITIES. This is ONE HOT ENCODED with the 1 at the INDEX of the DESIRED CATEGORY or NUMBER. 
 - The Other VECTOR is the VECTOR of PREDICTED / COMPUTED-  PROBABILITIES . 
 - Now we need to CALCULATE the DISTANCE between these two VECTORS. 
-- Euclidian distance would also do but the best for a CLASSIFICATION problem is the -- CROSS ENTROPY . 
+- Euclidian distance would also do but the best for a CLASSIFICATION problem is the - CROSS ENTROPY. 
 - CROSS ENTROPY is SUM across the VECTORS of Values on top NUMBERS Above - 0-9. Multiplied (Dot product) of the LOG of the VALUES Below. 
 - As all the VALUES on the BOTTOM are less than 1 . All the LOG VALUES  shall be negative , thus the returned value has been given a NEGATIVE sign. 
-- We need the SYSTEM to PREDICT Values as close as possible to the ACTUAL PROBABILITIES. Thus we will guide the system through thwe TRAINING phase to MINIMIZE this Distance and this is thus called the ERROR Function. 
+- We need the SYSTEM to PREDICT Values as close as possible to the ACTUAL PROBABILITIES. Thus we will guide the system through thwe TRAINING phase to MINIMIZE this Distance and this is thus called the LOSS / ERROR Function. 
 
 ### Matplotlib Graphs 
 #
@@ -48,10 +48,10 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 - Biases - Minus 2 to Plus 2
 
 ### Tensorflow Code
-
-tf.Variable --- variables of TF are values we are wanting TF to compute for us. 
 #
-tf.placeholder --- a placeholder for the images
+tf.Variable - variables of TF are values we are wanting TF to compute for us. 
+#
+tf.placeholder - a placeholder for the images
 #
 
 ```
@@ -66,6 +66,7 @@ W = tf.variable(tf.zeros([784,10]))
 b = tf.Variable(tf.zeros([10]))
 
 init = tf.initialize_all_variables()
+
 ```
 Training the model in TF terms means computing the VARIBALES == Weights and Biases. 
 #
@@ -111,7 +112,9 @@ is_correct = tf.equal(tf.argmax(Y,1)tf.argmax(Y_,1)) ## One Hot Decoding == tf.a
 accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 
 ```
-#### Its called - Gradient descent , as we Follow in the Direction pointed by the Gradient and Descent . 
+#
+#### Its called - Gradient descent , as we Follow in the Direction pointed by the Gradient and Descent. 
+#
 - Gradient descent - we are in the space of weights and biases...
 - The Gradient points us downwards as its got a Negative Sign ...
 - We take a little step - downwards into the direction pointed by the Gradient...
@@ -119,6 +122,15 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 - This is the basic TRAINING - whenever we pass in a New Batch of Training Images - we repeat this process and everytime reduce the ERROR or LOSS Function.
  
 #
+- TF has a deffered execution model.
+- When we execute the functions we dont return VALUES - we return an In-memory COMPUTATION GRAPH.
+- TF needs to know the full graph to do a Formal Derivation ?? Thus in place of providing values a COMPUTATION GRAPH is provided to TF.
+- TF is built for Distributed Computing thus a COMPUTATION GRAPH. To distribute a GRAPH over multiple machines TF needs to know what the COMPUTATION GRAPH is. 
+- Define a Session with - tf.session(). Then call this session at one EDGE of the GRAPH  
+- Feed the Placeholders , created earlier with actual data - training Images and training Labels.  Using the Dictionary - train_data{X:batch_X,Y_:batch_Y}
+#
+
+
 
 
 
