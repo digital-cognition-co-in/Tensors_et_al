@@ -74,6 +74,7 @@ Training the model in TF terms means computing the VARIBALES == Weights and Bias
 
 ```
 Y = tf.nn.softmax(tf.matmul(tf.reshape(X,[-1,784]),W)+b)
+
 # tf.reshape - will flatten the IMAGE pixels into one big VECTOR - all the pixels in one line.
 # tf.matmul - for MATRIX Multiplication of X and W.
 
@@ -82,6 +83,13 @@ Y_ = tf.placeholder(tf.float32,[None,10])
 # placeholder for the GROUND TRUTH - known labels of the IMAGES - Values == 0-9
 # None - will be passed in as a PARAM ?
 # the - 10 - is One Hot Encoded ? How ? 
+
+# The LOSS FUNCTION or the ERROR FUNCTION 
+
+cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
+
+# tf.reduce_sum = sum accross the VECTOR. 
+# Multiplication of known LABELS == Y_ , with log of PREDICTED LABELS == Y.
 
 ```
 
