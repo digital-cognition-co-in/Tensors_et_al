@@ -67,6 +67,23 @@ b = tf.Variable(tf.zeros([10]))
 
 init = tf.initialize_all_variables()
 ```
+Training the model in TF terms means computing the VARIBALES == Weights and Biases. 
+#
+#### the TF Model - represents One layer of the Neural net
+#
+
+```
+Y = tf.nn.softmax(tf.matmul(tf.reshape(X,[-1,784]),W)+b)
+# tf.reshape - will flatten the IMAGE pixels into one big VECTOR - all the pixels in one line.
+# tf.matmul - for MATRIX Multiplication of X and W.
+
+Y_ = tf.placeholder(tf.float32,[None,10])
+
+# placeholder for the GROUND TRUTH - known labels of the IMAGES - Values == 0-9
+# None - will be passed in as a PARAM ?
+# the - 10 - is One Hot Encoded ? How ? 
+
+```
 
 
 
