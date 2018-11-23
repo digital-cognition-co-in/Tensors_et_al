@@ -118,7 +118,7 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 - Gradient descent - we are in the space of weights and biases...
 - The Gradient points us downwards as its got a Negative Sign ...
 - We take a little step - downwards into the direction pointed by the Gradient...
-- Step means we MODIFY the Weights and Biases by a DELTA - so that we achieve a smaller LOSS or ERROR Function...
+- Step means we MODIFY the Weights and Biases by a DELTA - so that we achieve a smaller LOSS or ERROR...
 - This is the basic TRAINING - whenever we pass in a New Batch of Training Images - we repeat this process and everytime reduce the ERROR or LOSS Function.
  
 #
@@ -126,13 +126,14 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 - When we execute the functions we dont return VALUES - we return an In-memory COMPUTATION GRAPH.
 - TF needs to know the full graph to do a Formal Derivation ?? Thus in place of providing values a COMPUTATION GRAPH is provided to TF.
 - TF is built for Distributed Computing thus a COMPUTATION GRAPH. To distribute a GRAPH over multiple machines TF needs to know what the COMPUTATION GRAPH is. 
-- Define a Session with - tf.session(). Then call this session at one EDGE of the GRAPH  
-- Feed the Placeholders , created earlier with actual data - training Images and training Labels.  Using the Dictionary - train_data{X:batch_X,Y_:batch_Y}
+- Due to this deffered approach - to get VALUES the user needs to go through another loop. We need to define a TF session and extract values from the sessions computation. ```sess.run(init)``` , will give actual values.
+- Define a Session with - ```tf.session()```. Then call this session at one EDGE of the GRAPH  
+- Feed the Placeholders , created earlier with actual data - training Images and training Labels.  Using the Dictionary - ```train_data{X:batch_X,Y_:batch_Y}```
+
 #
 
 
-
-
+#
 
 
 
