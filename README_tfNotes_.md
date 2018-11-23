@@ -92,7 +92,26 @@ cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
 # Multiplication of known LABELS == Y_ , with log of PREDICTED LABELS == Y.
 
 ```
+#
 
+#### GradientDescentOptimizer - one of the many available optimizers
+
+#
+```
+optimizer = tf.train.GradientDescentOptimizer(0.003) # Learning rate == 0.003
+train_step = optimizer.minimize(cross_entropy) # our Loss Function 
+
+# % of correct classifications - found in batch
+
+is_correct = tf.equal(tf.argmax(Y,1)tf.argmax(Y_,1)) ## One Hot Decoding == tf.argmax
+
+
+# accuracy of classification 
+
+accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
+
+```
+#
 
 
 
