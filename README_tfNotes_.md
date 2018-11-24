@@ -32,7 +32,8 @@ Y = tf.nn.softmax(tf.matmul(X,W)+b)
 tensor shapes == X[100,784] , W[784,10] , b[10]
 #
 - We train the NEURAL NET to deduce the WEIGHTS and BIASES on its own. 
-- The Python Class of the Weights Variable is ```# <class 'tensorflow.python.ops.variables.Variable'>```
+- The Python Class of the Weights Variable is ```# <class 'tensorflow.python.ops.variables.Variable'>``` . If we were to Print() the Weights variable in the terminal - we get to see ```<tf.Variable 'Variable_1:0' shape=(784, 10) dtype=float32_ref> ```. We dont see a ARRAY of any sort ?? Why ??
+
 - When we TRAIN the - nn - initialize WEIGHTS and BIASES to soem RANDOM Values ?? [ WHAT RANDOM - within what RANGE etc ??]
 - One HOT ENCODING Values - 0-9 . The VECTOR of ACTUAL PROBABILITIES. This is ONE HOT ENCODED with the 1 at the INDEX of the DESIRED CATEGORY or NUMBER. 
 - The Other VECTOR is the VECTOR of PREDICTED / COMPUTED-  PROBABILITIES . 
@@ -95,6 +96,40 @@ cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
 
 ```
 #
+#### Own Notes - and queries with regards TF Code 
+#
+
+```
+# input X: 28x28 grayscale images, the first dimension (None) will index the images in the mini-batch
+X = tf.placeholder(tf.float32, [None, 28, 28, 1])
+# correct answers will go here
+Y_ = tf.placeholder(tf.float32, [None, 10])
+# weights W[784, 10]   784=28*28
+W = tf.Variable(tf.zeros([784, 10]))
+
+
+"""
+The weights being passed in as INITIAL Weights
+"""
+
+weights_1 = tf.Variable(tf.zeros([784, 10]))
+print("The weights being passed in as INITIAL Weights ---->>",type(weights_1))
+# <class 'tensorflow.python.ops.variables.Variable'>
+print("The weights being passed in as INITIAL Weights ---->>",weights_1)
+
+"""
+The Python Class of the Weights Variable is ```# <class 'tensorflow.python.ops.variables.Variable'>``` . 
+If we were to Print() the Weights variable in the 
+terminal - we get to see ```<tf.Variable 'Variable_1:0' shape=(784, 10) dtype=float32_ref> ```. 
+We dont see a ARRAY of any sort ?? Why ??
+"""
+
+
+# biases b[10]
+b = tf.Variable(tf.zeros([10]))
+
+
+```
 
 #### GradientDescentOptimizer - one of the many available optimizers
 
@@ -159,7 +194,7 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 
 #
 
-- x
+- 
 
 
 #
