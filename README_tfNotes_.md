@@ -130,6 +130,13 @@ b = tf.Variable(tf.zeros([10]))
 
 
 ```
+#
+- So where are the VARIABLES ? Lets look for the function / method - variable , and try and understand this further.
+- The path to the ``` variables.py ``` file is - ``` tensorflow/tensorflow/python/ops/variables.py ```
+
+
+#
+
 
 #### GradientDescentOptimizer - one of the many available optimizers
 
