@@ -104,6 +104,7 @@ cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
 # input X: 28x28 grayscale images, the first dimension (None) will index the images in the mini-batch
 X = tf.placeholder(tf.float32, [None, 28, 28, 1])
 # this X is of Class -- <class 'tensorflow.python.framework.ops.Tensor'>
+# Its a PlaceHolder for training images
 
 # correct answers will go here
 Y_ = tf.placeholder(tf.float32, [None, 10])
@@ -113,27 +114,16 @@ Y_ = tf.placeholder(tf.float32, [None, 10])
 W = tf.Variable(tf.zeros([784, 10]))
 # this W is of Class -- <class 'tensorflow.python.ops.variables.Variable'>
 
+# biases b[10]
+b = tf.Variable(tf.zeros([10]))
+# this b is of Class -- <tf.Variable 'Variable_3:0' shape=(10,) dtype=float32_ref>
+
 
 """
-The weights being passed in as INITIAL Weights
-"""
-
-weights_1 = tf.Variable(tf.zeros([784, 10]))
-print("The weights being passed in as INITIAL Weights ---->>",type(weights_1))
-# <class 'tensorflow.python.ops.variables.Variable'>
-print("The weights being passed in as INITIAL Weights ---->>",weights_1)
-
-"""
-The Python Class of the Weights Variable is ```# <class 'tensorflow.python.ops.variables.Variable'>``` . 
 If we were to Print() the Weights variable in the 
 terminal - we get to see ```<tf.Variable 'Variable_1:0' shape=(784, 10) dtype=float32_ref> ```. 
 We dont see a ARRAY of any sort ?? Why ??
 """
-
-
-# biases b[10]
-b = tf.Variable(tf.zeros([10]))
-
 
 ```
 #
@@ -142,7 +132,6 @@ b = tf.Variable(tf.zeros([10]))
 
 
 #
-
 
 #### GradientDescentOptimizer - one of the many available optimizers
 
@@ -193,17 +182,24 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 
 #
 
-- We use RELU as its better than SIGMOID - why ? 
+- We use RELU as its better than SIGMOID - why ? Cross Entropy shoots down really fast. Accuracy shoots up really fast. 
 - ``` Y = tf.nn.relu(tf.matmul(X,W)+b)``` - RELU returns - Zero for all negative values and One (Identity) for all positive values.
-- Start Fast and then Slow Down - Learning rate decay on an exponential curve.
+- Demo - Noisy Accuracy Curve - How to reduce noise use - LearningRateDecay. Start Fast and then Slow Down - Learning rate decay on an exponential curve.
+- By moving from a Fixed Learning Rate - to a , Decaying Learning Rate - we can reduce almost all the noise. At the start Learning rate == 0.003 , decays to 0.0001 towards the end. 
 - Compared to the SIGMOID - RELU gives Higher Accuracy to begin with. The RELU Accuracy curve has a STEEP Rise and then flattens at @ 85% Accuracy.
+
 
 #### Overfitting 
 
 #
-- Overfitting 
-- DropOut - basis probability remove a certain % of Neurons during training - and again get them back in the network to run on TEST data. 
-- TF dropout function , ``` Y = tf.nn.dropout(Yf,pkeep) ```.
+- For the curse of - Overfitting - the textbook solution is to REGULARIZE. The regularization technique being preffered is called - dropout.
+- DropOut - basis probability remove a certain % of Neurons during EACH ITERATION of training. 
+- Next Training iteration again RANDOMLY remove a certain defined % of Neurons. 
+- During the Testing Phase - or application of trained model in Production -we dont Remove any Neurons.
+- What we need to note is - during this demo the MODEL is being TRAINED on Training data and at the same time the MODEL is also being RUN on test data. Thats how we get to see the LOSS / ERROR being reduced - for both the TRAINING and TESTING phase. 
+- In classical STATSTICAL modeling we would usually TRAIN the Model on TRAINING data and then TEST it on a TEST data set as a separate run. 
+- TF dropout function , ``` Y = tf.nn.dropout(Yf,pkeep) ```. The tf.nn.dropout - function will replace some values in the output layer with zeros.
+
 
 #
 
