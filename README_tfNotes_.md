@@ -97,7 +97,7 @@ cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
 
 ```
 #
-#### Own Notes - and queries with regards TF Code 
+#### The initial input tensors , the PlaceHolders and Weights Variable.
 #
 
 ```
