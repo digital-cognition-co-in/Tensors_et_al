@@ -6,7 +6,6 @@
 #
 - Flattened vector of All Pixels from 1 Image == 28X28 == 784 Pixels 
 - Loading the data - MNIST digits into TF. We use/call the methods make_one_shot_iterator() etc ..from within the Class -- class MnistData(object): . In the Python Module ../tensorflow-without-a-phd-master/tensorflow-mnist-tutorial/mnistdata.py
-
 - The initial One Layered Neural Network has only a Single Layer of - 10 Neurons. 
 
 #
@@ -104,10 +103,15 @@ cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
 ```
 # input X: 28x28 grayscale images, the first dimension (None) will index the images in the mini-batch
 X = tf.placeholder(tf.float32, [None, 28, 28, 1])
+# this X is of Class -- <class 'tensorflow.python.framework.ops.Tensor'>
+
 # correct answers will go here
 Y_ = tf.placeholder(tf.float32, [None, 10])
+# this Y_ is of Class -- <class 'tensorflow.python.framework.ops.Tensor'>
+
 # weights W[784, 10]   784=28*28
 W = tf.Variable(tf.zeros([784, 10]))
+# this W is of Class -- <class 'tensorflow.python.ops.variables.Variable'>
 
 
 """
