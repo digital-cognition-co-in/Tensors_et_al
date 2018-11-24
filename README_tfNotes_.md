@@ -4,10 +4,12 @@
 ### YouTube Link -2 [GoogleCloudYouTube](https://www.youtube.com/watch?v=vq2nnJ4g6N0)
 
 #
-Flattened vector of All Pixels from 1 Image == 28X28 == 784 Pixels 
+- Flattened vector of All Pixels from 1 Image == 28X28 == 784 Pixels 
+- Loading the data - MNIST digits into TF. We use/call the methods make_one_shot_iterator() etc ..from within the Class -- class MnistData(object): . In the Python Module ../tensorflow-without-a-phd-master/tensorflow-mnist-tutorial/mnistdata.py
 
-10 Neurons 
+- The initial One Layered Neural Network has only a Single Layer of - 10 Neurons. 
 
+#
 - A neuron does a WEIGHTED Sum of ALL of its INPUTS , which are the PIXELS 
 - It adds another CONSTANT - Bias.
 - Bias == Constant . An additional degree of freedom 
