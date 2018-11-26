@@ -1,7 +1,7 @@
 ### Own Learning Notes / Video Transcript == Tensorflow and deep learning - without a PhD by Martin Görner
 
 ### YouTube Link -1 [GoogleCloudYouTube](https://www.youtube.com/watch?v=vq2nnJ4g6N0)
-### YouTube Link -2 [GoogleCloudYouTube](https://www.youtube.com/watch?v=vq2nnJ4g6N0)
+### YouTube Link -2 [GoogleCloudYouTube](https://www.youtube.com/)
 
 #
 - Flattened vector of All Pixels from 1 Image == 28X28 == 784 Pixels 
@@ -10,8 +10,8 @@
 
 #
 - A neuron does a WEIGHTED Sum of ALL of its INPUTS , which are the PIXELS 
-- It adds another CONSTANT - Bias.
-- Bias == Constant . An additional degree of freedom 
+- verbatim from Google Tutorial - Each "neuron" in a neural network does a weighted sum of all of its inputs, adds a constant called the "bias" and then feeds the result through some non-linear activation function.
+- It adds another CONSTANT - Bias. An additional degree of freedom. 
 - Neuron will then FEED this SUM through an ACTIVATION Function. 
 - We will see several of those ACTIVATION Functions , the one thing they have common in case of Neural Networks is that they are ALL NON LINEAR.
 - Why only 10 NEURONS - as we have TEN CATEGORIES of DIGITS = 0-9
@@ -35,7 +35,7 @@ tensor shapes == X[100,784] , W[784,10] , b[10]
 - We train the NEURAL NET to deduce the WEIGHTS and BIASES on its own. 
 - The Python Class of the Weights Variable is ```# <class 'tensorflow.python.ops.variables.Variable'>``` . If we were to Print() the Weights variable in the terminal - we get to see ```<tf.Variable 'Variable_1:0' shape=(784, 10) dtype=float32_ref> ```. We dont see a ARRAY of any sort ?? Why ??
 
-- When we TRAIN the - nn - initialize WEIGHTS and BIASES to soem RANDOM Values ?? [ WHAT RANDOM - within what RANGE etc ??]
+- When we TRAIN the - nn - initialize WEIGHTS and BIASES to some RANDOM Values ?? [ WHAT RANDOM - within what RANGE etc ??]
 - One HOT ENCODING Values - 0-9 . The VECTOR of ACTUAL PROBABILITIES. This is ONE HOT ENCODED with the 1 at the INDEX of the DESIRED CATEGORY or NUMBER. 
 - The Other VECTOR is the VECTOR of PREDICTED / COMPUTED-  PROBABILITIES . 
 - Now we need to CALCULATE the DISTANCE between these two VECTORS. 
@@ -62,7 +62,7 @@ import tensorflow as tf
 X = tf.placeholder(tf.float32,[None,28,28,1]
 # 1 for the GRAY CHANNEL 
 # 3 for the RGB
-# None for Image Batch Size 
+# None for Image Batch Size - will be passed in at TRAINING TIME.
 # 28 , 28 - Shape of Image Pixels
 
 W = tf.variable(tf.zeros([784,10]))
@@ -153,7 +153,7 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 #
 #### Its called - Gradient descent , as we Follow in the Direction pointed by the Gradient and Descent. 
 #
-- Gradient descent - we are in the space of weights and biases...
+- Gradient descent - we are in the space of weights and biases...The GRADIENT function points Upwards . We choose to move in the Opposite direction and descent into a LOCAL MINIMA.
 - The Gradient points us downwards as its got a Negative Sign ...
 - We take a little step - downwards into the direction pointed by the Gradient...
 - Step means we MODIFY the Weights and Biases by a DELTA - so that we achieve a smaller LOSS or ERROR...
@@ -197,16 +197,30 @@ accuracy = tf.reduce_mean(tf.cast(is_correct,tf.float32))
 - Next Training iteration again RANDOMLY remove a certain defined % of Neurons. 
 - During the Testing Phase - or application of trained model in Production -we dont Remove any Neurons.
 - What we need to note is - during this demo the MODEL is being TRAINED on Training data and at the same time the MODEL is also being RUN on test data. Thats how we get to see the LOSS / ERROR being reduced - for both the TRAINING and TESTING phase. 
-- In classical STATSTICAL modeling we would usually TRAIN the Model on TRAINING data and then TEST it on a TEST data set as a separate run. 
+- In classical STATISTICAL modeling we would usually TRAIN the Model on TRAINING data and then TEST it on a TEST data set as a separate run. 
 - TF dropout function , ``` Y = tf.nn.dropout(Yf,pkeep) ```. The tf.nn.dropout - function will replace some values in the output layer with zeros.
 
+#
+
+
+#### Own Notes from elsewhere - non video transcript :- 
+#
+##### dataSets - https://www.tensorflow.org/guide/datasets
+
 
 #
 
-- 
+##### 
+
+```
+dataset = (dataset.map(lambda x: x ** 2)
+           .apply(group_by_window(key_func, reduce_func, window_size))
+           .map(lambda x: x ** 3))
+```
 
 
-#
+
+
 
 
 
